@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Switch from './Switch';
 
 import './App.css';
 
@@ -29,12 +30,7 @@ function App() {
             <p className='font-light text-mb'>BST</p>
           </div>
           <p className='uppercase font-bold text-mb tracking-h6'>IN LONDON, UK</p>
-          <div onClick={() => setIsOpen(!isOpen)} className='flex items-center w-[115px] h-[36px] bg-white rounded-[28px] mt-[60px] mb-7 cursor-pointer'>
-            <span className='text-base font-bold tracking-button text-gray-400 mx-6'>MORE</span>
-            <div className='w-[32px] h-[32px] bg-dark flex items-center justify-center rounded-full'>
-              <svg width="14" height="9" xmlns="http://www.w3.org/2000/svg"><path stroke="#FFF" stroke-width="2" fill="none" d="m1 1 6 6 6-6"/></svg>
-            </div>
-          </div>
+          <Switch data={{isOpen, setIsOpen}}/>
         </div>
       </article>
     </main>
