@@ -1,8 +1,8 @@
-function Switch({data}) {
+function Switch({data, className}) {
 
   return (
     <>
-        <div onClick={() => data.setIsOpen(!data.isOpen)} className='flex items-center w-[115px] h-[36px] bg-white rounded-[28px] mt-[60px] mb-7 cursor-pointer'>
+        <div className={`flex items-center w-[115px] h-[36px] bg-white rounded-[28px] mb-7 cursor-pointer ${className}`} onClick={() => data.setIsOpen(!data.isOpen)} >
             <span className='text-base font-bold tracking-button text-gray-400 flex-[0.94] text-center'>{data.isOpen ? "LESS" : "MORE"}</span>
             <div className={`w-[28px] h-[28px] bg-dark hover:bg-gray-400 flex items-center justify-center rounded-full`}>
                 {data.isOpen ? (
