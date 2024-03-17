@@ -1,11 +1,13 @@
 import { useContext } from 'react';
 import { ThemeContext } from './App';
+import { useTime } from 'react-timer-hook';
 
 function Clock({timeInfo, location,  open, className}) {
+    const {
+        minutes,
+        hours,
+    } = useTime();
     const dayTheme = useContext(ThemeContext);
-    const date = timeInfo.unixtime ? new Date(Number(timeInfo.unixtime) * 1000) : new Date();
-    const hour = date.getHours();
-    const min = date.getMinutes();
 
     return (
       <>
@@ -23,7 +25,7 @@ function Clock({timeInfo, location,  open, className}) {
             <p className='uppercase tracking-h6 text-mb font-light sm:text-xl xl:text-h4 xl:tracking-[4px]'>{dayTheme ? ("good morning") : ("good evening")}</p>
           </div>
           <div className='flex items-baseline'>
-            <h1 className='font-bold text-[9rem] sm:text-[17rem] xl:text-h1 leading-[1.2]'>{hour < 10 ? "0" + hour : hour}:{min < 10 ? "0" + min : min}</h1>
+            <h1 className='font-bold text-[9rem] sm:text-[17rem] xl:text-h1 leading-[1.2]'>{hours < 10 ? "0" + hours : hours}:{minutes < 10 ? "0" + minutes : minutes}</h1>
             <p className='font-light text-mb ml-3 sm:text-[3.2rem]'>{timeInfo.abbreviation}</p>
           </div>
           <p className='uppercase font-bold text-mb tracking-h6 sm:text-xl xl:text-h3 xl:tracking-[4.8px]'>IN {location.city}, {location.countryCode}</p>
