@@ -5,21 +5,28 @@ function Panel({data, open, className}) {
     const dayTheme = useContext(ThemeContext);
     return (
       <>
-        <aside className={`opacity-90 ${dayTheme ? "bg-white text-dark" : "bg-black text-white"}  h-[40vh] w-full absolute top-full -translate-y-full ${open.isOpen || "hidden"} ${className}`}>
-            <div className='mx-10 my-16 grid grid-cols-2 grid-rows-4 items-center h-[calc(40vh-_8rem)]'>
-                <p className='uppercase tracking-mb col-span-1 row-span-1 '>CURRENT TIMEZONE</p>
-                <p className='font-bold  text-h4 col-start-2 col-end-3 row-span-1 text-right'>{data.timezone}</p>
+        <aside className={`opacity-90 ${dayTheme ? "bg-white text-dark" : "bg-black text-white"} h-[40vh] w-full flex items-center justify-center absolute top-full -translate-y-full ${open.isOpen || "hidden"} ${className}`}>
+            <div className='sm:gap-x-[10vw] col-auto grid sm:grid-cols-2 sm:grid-rows-2 grid-rows-4 items-center h-[calc(40vh-_8rem)] '>
+                <div className='sm:block flex justify-between items-center'>
+                  <p className='uppercase tracking-mb sm:text-[1.3rem] sm:tracking-md2 mr-14'>CURRENT TIMEZONE</p>
+                  <p className='font-bold text-h4 sm:text-[4rem]'>{data.timezone}</p>
+                </div>
+
+                <div className='sm:block row-end-3 flex justify-between items-center'>
+                  <p className='uppercase tracking-mb sm:text-[1.3rem] sm:tracking-md2'>Day of the year</p>
+                  <p className='font-bold text-h4 sm:text-[4rem]'>{data.day_of_year}</p>
+                </div>
+
+                <div className='sm:block flex justify-between items-center'>
+                  <p className='uppercase tracking-mb sm:text-[1.3rem] sm:tracking-md2'>day of the week</p>
+                  <p className='font-bold text-h4 sm:text-[4rem]'>{data.day_of_week + 1}</p>
+                </div>
 
 
-                <p className='uppercase tracking-mb col-span-1'>Day of the year</p>
-                <p className='font-bold text-h4 col-start-2 col-end-3 text-right'>{data.day_of_year}</p>
-
-                <p className='uppercase tracking-mb col-span-1'>day of the week</p>
-                <p className='font-bold text-h4 col-start-2 col-end-3 text-right'>{data.day_of_week + 1}</p>
-
-
-                <p className='uppercase tracking-mb col-span-1'>week number</p>
-                <p className='font-bold text-h4 col-start-2 col-end-3 text-right'>{data.week_number}</p>
+                <div className='sm:block flex justify-between items-center'>
+                  <p className='uppercase tracking-mb sm:text-[1.3rem] sm:tracking-md2'>week number</p>
+                  <p className='font-bold text-h4 sm:text-[4rem]'>{data.week_number}</p>
+                </div>
             </div>
         </aside>
       </>

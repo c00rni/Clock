@@ -29,7 +29,8 @@ module.exports = {
       letterSpacing: {
         h6: "3px",
         button: "3.75px",
-        mb: "2px"
+        mb: "2px",
+        mb2: "2.6px"
       },
     },
   },
