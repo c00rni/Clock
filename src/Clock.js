@@ -22,11 +22,11 @@ function Clock({timeInfo, location,  open, className}) {
                     <svg className="mr-4" width="23" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M22.157 17.366a.802.802 0 00-.891-.248 8.463 8.463 0 01-2.866.482c-4.853 0-8.8-3.949-8.8-8.8a8.773 8.773 0 013.856-7.274.801.801 0 00-.334-1.454A7.766 7.766 0 0012 0C5.382 0 0 5.382 0 12s5.382 12 12 12c4.2 0 8.02-2.134 10.218-5.709a.805.805 0 00-.061-.925z" fill="#FFF" fill-rule="nonzero"/></svg>
                 </>
             )}
-            <p className='uppercase tracking-h6 text-mb font-light sm:text-xl xl:text-h4 xl:tracking-[4px]'>{dayTheme ? ("good morning") : ("good evening")}</p>
+            <p className='uppercase tracking-h6 text-mb font-light sm:text-xl xl:text-h4 xl:tracking-[4px] duration-300'>{dayTheme ? ("good morning") : ("good evening")}</p>
           </div>
           <div className='flex items-baseline'>
-            <h1 className='font-bold text-[9rem] sm:text-[17rem] xl:text-h1 leading-[1.2]'>{hours < 10 ? "0" + hours : hours}:{minutes < 10 ? "0" + minutes : minutes}</h1>
-            <p className='font-light text-mb ml-3 sm:text-[3.2rem]'>{timeInfo.abbreviation}</p>
+            <h1 className='font-bold text-[9rem] sm:text-[17rem] xl:text-h1 leading-[1.2] duration-300'>{hours < 10 ? "0" + hours : hours}:{minutes < 10 ? "0" + minutes : minutes}</h1>
+            <p className='font-light text-mb ml-3 sm:text-[3.2rem] duration-300'>{timeInfo.abbreviation}</p>
           </div>
           <p className='uppercase font-bold text-mb tracking-h6 sm:text-xl xl:text-h3 xl:tracking-[4.8px]'>IN {location.city}, {location.countryCode}</p>
         </div>

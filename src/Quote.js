@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import {decode} from 'html-entities';
 
 function Quote({open, className}) {
     const [quote, setQuote] = useState({author:"", content:""});
@@ -12,7 +13,8 @@ function Quote({open, className}) {
         .then(response => response.json())
         .then(res => {
             const randNumber = Math.floor(Math.random() * res.length)
-            setQuote({author: res[randNumber].title.rendered, content: res[randNumber].content.rendered.split("<p>")[1].split("</p>")[0]});
+            setQuote({author: res[randNumber].title.rendered, content: decode(res[randNumber].content.rendered.split("<p>")[1].split("</p>")[0])});
+            console.log(res[randNumber].content.rendered.split("<p>")[1].split("</p>")[0])
         });
 
         setIsFetching(false)
@@ -25,7 +27,7 @@ function Quote({open, className}) {
     return (
       <>
         <article className={`w-full flex xl:max-w-[40vw] ${open.isOpen && "hidden"} ${className}`}>
-            <div className={`flex flex-col flex-auto`}>
+            <div className={`opacity-0 flex flex-col flex-auto ${!open.isOpen && "opacity-100"}`}>
                 <p className='text-base md:text-xl font-light'>“{quote.content}”</p>
                 <p className='mt-3 md:text-xl font-semibold text-base'>{quote.author}</p>
             </div>
