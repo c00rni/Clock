@@ -14,7 +14,6 @@ function Quote({open, className}) {
         .then(res => {
             const randNumber = Math.floor(Math.random() * res.length)
             setQuote({author: res[randNumber].title.rendered, content: decode(res[randNumber].content.rendered.split("<p>")[1].split("</p>")[0])});
-            console.log(res[randNumber].content.rendered.split("<p>")[1].split("</p>")[0])
         });
 
         setIsFetching(false)

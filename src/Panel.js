@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 import { ThemeContext } from './App';
 
-function Panel({data, open, className}) {
+function Panel({data, isOpen, className}) {
     const dayTheme = useContext(ThemeContext);
     return (
       <>
-        <aside className={`opacity-90 ${dayTheme ? "bg-white text-dark" : "bg-black text-white"} h-[40vh] w-full flex items-center justify-center absolute top-full -translate-y-full ${open.isOpen || "h-0"} duration-500 ${className}`}>
-            <div className={`sm:gap-x-[10vw] col-auto grid sm:grid-cols-2 sm:grid-rows-2 xl:grid-cols-3 grid-rows-4 max-w-[1280px] xl:gap-x-0 xl:w-full items-center h-[calc(40vh-_8rem)] ${open.isOpen || "hidden"}`}>
+        <aside className={`opacity-90 ${dayTheme ? "bg-white text-dark" : "bg-black text-white"} h-0 w-full flex items-center justify-center absolute top-full -translate-y-full ${isOpen && "h-[40vh]"} duration-500 ${className}`}>
+            <div className={`${isOpen ? ("sm:gap-x-[10vw] grid col-auto sm:grid-cols-2 sm:grid-rows-2 xl:grid-cols-3 grid-rows-4 max-w-[1280px] xl:gap-x-0 xl:w-full items-center h-[calc(40vh-_8rem)]") : "hidden" }`}>
                 <div className='sm:block flex justify-between items-center'>
                   <p className='uppercase tracking-mb sm:text-[1.3rem] sm:tracking-md2 mr-14'>CURRENT TIMEZONE</p>
                   <p className='font-bold text-h4 sm:text-[4rem] xl:text-h2'>{data.timezone}</p>

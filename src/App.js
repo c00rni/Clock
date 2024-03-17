@@ -53,7 +53,7 @@ function App() {
           <Clock timeInfo={timeInfo} location={locationInfo} open={{isOpen, setIsOpen}} className={isOpen ? "col-start-1 col-end-9 row-start-2 row-end-5 mt-[20px]" : "col-start-1 col-end-8 row-start-5 row-end-9 mt-[20px]"}/>
           <Switch className={`${isOpen ? "col-start-1 col-end-11 xl:col-start-9 xl:row-start-4 xl:row-end-5 xl:self-end xl:mb-0 row-start-5 row-end-9" : "col-start-1 col-end-11 row-start-8 row-end-9 xl:col-start-9 xl:row-start-7 xl:row-end-8 xl:self-end xl:mb-0"}`} data={{isOpen, setIsOpen}}/>
         </article>
-        <Panel data={timeInfo} open={{isOpen, setIsOpen}} />
+        <Panel data={timeInfo} isOpen={isOpen} />
       </ThemeContext.Provider>
     </main>
     </>
