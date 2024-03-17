@@ -24,7 +24,7 @@ function Quote({open, className}) {
 
     return (
       <>
-        <article className={`w-full flex ${open.isOpen && "hidden"} ${className}`}>
+        <article className={`w-full flex xl:max-w-[40vw] ${open.isOpen && "hidden"} ${className}`}>
             <div className={`flex flex-col flex-auto`}>
                 <p className='text-base md:text-xl font-light'>“{quote.content}”</p>
                 <p className='mt-3 md:text-xl font-semibold text-base'>{quote.author}</p>

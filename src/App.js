@@ -47,11 +47,11 @@ function App() {
     <>
     <main className='h-screen bg-black relative opacity-99'>
       <ThemeContext.Provider value={isDayTime}>
-        <img className="h-screen object-cover opacity-60" src={isDayTime ? require("./assets/desktop/bg-image-daytime.jpg") : require("./assets/desktop/bg-image-nighttime.jpg")} alt="Day time" />
-        <article className='grid grid-cols-10 grid-rows-8 md:px-[60px] md:py-[80px] absolute top-0 w-full h-full text-white font-normal py-11 px-8'>
-          <Quote className={"col-start-1 col-end-11 row-start-1 row-end-5"} open={{isOpen, setIsOpen}} />
-          <Clock timeInfo={timeInfo} location={locationInfo} open={{isOpen, setIsOpen}}/>
-          <Switch className={`${isOpen ? "col-start-1 col-end-11 row-start-5 row-end-9" : "col-start-1 col-end-11 row-start-8 row-end-9"}`} data={{isOpen, setIsOpen}}/>
+        <img className="h-screen w-screen object-cover opacity-60" src={isDayTime ? require("./assets/desktop/bg-image-daytime.jpg") : require("./assets/desktop/bg-image-nighttime.jpg")} alt="Day time" />
+        <article className='grid grid-cols-10 grid-rows-8 md:px-[60px] md:py-[80px] xl:px-0 xl:py-0 max-w-[1280px] xl:m-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full text-white font-normal py-11 px-8'>
+          <Quote className={"col-start-1 col-end-11 row-start-1 xl:row-start-2 row-end-5"} open={{isOpen, setIsOpen}} />
+          <Clock timeInfo={timeInfo} location={locationInfo} open={{isOpen, setIsOpen}} className={isOpen ? "col-start-1 col-end-9 row-start-2 row-end-5 mt-[20px]" : "col-start-1 col-end-8 row-start-5 row-end-9 mt-[20px]"}/>
+          <Switch className={`${isOpen ? "col-start-1 col-end-11 xl:col-start-9 xl:row-start-4 xl:row-end-5 xl:self-end xl:mb-0 row-start-5 row-end-9" : "col-start-1 col-end-11 row-start-8 row-end-9 xl:col-start-9 xl:row-start-7 xl:row-end-8 xl:self-end xl:mb-0"}`} data={{isOpen, setIsOpen}}/>
         </article>
         <Panel data={timeInfo} open={{isOpen, setIsOpen}} />
       </ThemeContext.Provider>
