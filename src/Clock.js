@@ -1,8 +1,11 @@
 import { useContext } from 'react';
 import { ThemeContext } from './App';
 
-function Clock({open, className}) {
+function Clock({timeInfo, location,  open, className}) {
     const dayTheme = useContext(ThemeContext);
+    const date = timeInfo.unixtime ? new Date(Number(timeInfo.unixtime) * 1000) : new Date();
+    const hour = date.getHours();
+    const min = date.getMinutes();
 
     return (
       <>
@@ -22,10 +25,10 @@ function Clock({open, className}) {
 
           </div>
           <div className='flex items-baseline'>
-            <h1 className='font-bold text-[9rem] leading-[1.2]'>11:37</h1>
-            <p className='font-light text-mb'>BST</p>
+            <h1 className='font-bold text-[9rem] leading-[1.2]'>{hour < 10 ? "0" + hour : hour}:{min < 10 ? "0" + min : min}</h1>
+            <p className='font-light text-mb'>{timeInfo.abbreviation}</p>
           </div>
-          <p className='uppercase font-bold text-mb tracking-h6'>IN LONDON, UK</p>
+          <p className='uppercase font-bold text-mb tracking-h6'>IN {location.city}, {location.countryCode}</p>
         </div>
       </>
     );

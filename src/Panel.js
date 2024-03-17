@@ -15,7 +15,7 @@ function Panel({data, open, className}) {
                 <p className='font-bold text-h4 col-start-2 col-end-3 text-right'>{data.day_of_year}</p>
 
                 <p className='uppercase tracking-mb col-span-1'>day of the week</p>
-                <p className='font-bold text-h4 col-start-2 col-end-3 text-right'>{data.day_of_week}</p>
+                <p className='font-bold text-h4 col-start-2 col-end-3 text-right'>{data.day_of_week + 1}</p>
 
 
                 <p className='uppercase tracking-mb col-span-1'>week number</p>
