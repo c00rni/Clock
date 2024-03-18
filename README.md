@@ -21,7 +21,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/solutions/clock-with-real-time-data-uCNjB0Luyt]([https://your-solution-url.com](https://www.frontendmentor.io/solutions/clock-with-real-time-data-uCNjB0Luyt)
+- Solution URL: [https://www.frontendmentor.io/solutions/clock-with-real-time-data-uCNjB0Luyt](https://www.frontendmentor.io/solutions/clock-with-real-time-data-uCNjB0Luyt)
 - Live Site URL: [https://localclockpoc.netlify.app/](https://localclockpoc.netlify.app/)
 
 ### Built with
