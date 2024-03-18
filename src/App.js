@@ -18,7 +18,7 @@ function App() {
     let ip = "";
     let lat = "";
     let lon = "";
-    fetch(`http://worldtimeapi.org/api/ip`).then(response => response.json()).then(res => {
+    fetch(`https://worldtimeapi.org/api/ip`).then(response => response.json()).then(res => {
       ip = res.client_ip;
       setTimeInfo(res);
     });
