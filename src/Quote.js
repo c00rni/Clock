@@ -21,7 +21,7 @@ function Quote({open, className}) {
 
     useEffect(() => {
         fetchQuote()
-    },[fetchQuote])
+    },[])
 
     return (
       <>
